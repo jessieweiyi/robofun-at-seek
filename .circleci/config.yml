@@ -1,8 +1,16 @@
-dependencies:
-    override:
-        - sudo pip install awscli
-deployment:
-  prod:
-    branch: master
-    commands:
-      - aws s3 sync /home/ubuntu/robofun-at-seek s3://robofun-at-seek --delete
+version: 2.1
+orbs:
+  aws-s3: circleci/aws-s3@1.0.0
+jobs:
+  build:
+    docker:
+      - image: 'circleci/python:2.7'
+    steps:
+      - checkout
+      - aws-s3/sync:
+          from: .
+          to: 's3://robofun-at-seek/prefix'
+          arguments: |
+            --acl public-read \
+            --cache-control "max-age=86400"
+          overwrite: true
