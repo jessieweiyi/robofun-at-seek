@@ -7,8 +7,9 @@ jobs:
       - image: 'circleci/python:2.7'
     steps:
       - checkout
+      - run: mkdir bucket && echo "lorum ipsum" > bucket/build_asset.txt
       - aws-s3/sync:
-          from: .
+          from: bucket
           to: 's3://robofun-at-seek/prefix'
           arguments: |
             --acl public-read \
