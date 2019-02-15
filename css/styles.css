@@ -1,0 +1,24 @@
+header {
+  width: 1080px;
+  text-align: center;
+}
+
+.seek {
+  margin-left: : 20px;
+}
+
+.seekLogo {
+  width: 150px;
+  height: auto;
+}
+
+.robofun {
+  float: right;
+  margin-right: 20px;
+  margin-top: 20px;
+}
+
+.robofunLogo {
+  width: 150px;
+  height: auto;
+}
