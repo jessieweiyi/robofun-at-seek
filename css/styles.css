@@ -22,3 +22,8 @@ header {
   width: 150px;
   height: auto;
 }
+
+.buttonContainer {
+  text-align: center;
+  margin-top: 50px;
+}
